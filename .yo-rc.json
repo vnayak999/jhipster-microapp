@@ -1,0 +1,32 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.my.microapp"
+    },
+    "jhipsterVersion": "4.4.1",
+    "baseName": "microApp",
+    "packageName": "com.my.microapp",
+    "packageFolder": "com/my/microapp",
+    "serverPort": "8081",
+    "authenticationType": "jwt",
+    "hibernateCache": "no",
+    "clusteredHttpSession": false,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "postgresql",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": "eureka",
+    "buildTool": "gradle",
+    "enableSocialSignIn": false,
+    "jwtSecretKey": "4008926680f8071e8c7d6a2fc8406b9313ddcb4e",
+    "enableTranslation": false,
+    "applicationType": "microservice",
+    "testFrameworks": [],
+    "jhiPrefix": "jhi",
+    "skipClient": true,
+    "skipUserManagement": true,
+    "clientPackageManager": "yarn"
+  }
+}
