@@ -25,15 +25,12 @@ public class LoggingConfiguration {
 
     private final String serverPort;
 
-    private final String instanceId;
-
     private final JHipsterProperties jHipsterProperties;
 
     public LoggingConfiguration(@Value("${spring.application.name}") String appName, @Value("${server.port}") String serverPort,
-        @Value("${eureka.instance.instanceId}") String instanceId, JHipsterProperties jHipsterProperties) {
+         JHipsterProperties jHipsterProperties) {
         this.appName = appName;
         this.serverPort = serverPort;
-        this.instanceId = instanceId;
         this.jHipsterProperties = jHipsterProperties;
         if (jHipsterProperties.getLogging().getLogstash().isEnabled()) {
             addLogstashAppender(context);
@@ -51,8 +48,7 @@ public class LoggingConfiguration {
         LogstashSocketAppender logstashAppender = new LogstashSocketAppender();
         logstashAppender.setName("LOGSTASH");
         logstashAppender.setContext(context);
-        String customFields = "{\"app_name\":\"" + appName + "\",\"app_port\":\"" + serverPort + "\"," +
-            "\"instance_id\":\"" + instanceId + "\"}";
+        String customFields = "{\"app_name\":\"" + appName + "\",\"app_port\":\"" + serverPort + "\"}";
 
         // Set the Logstash appender config from JHipster properties
         logstashAppender.setSyslogHost(jHipsterProperties.getLogging().getLogstash().getHost());

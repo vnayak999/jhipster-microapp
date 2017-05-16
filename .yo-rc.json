@@ -17,7 +17,7 @@
     "prodDatabaseType": "postgresql",
     "searchEngine": false,
     "messageBroker": false,
-    "serviceDiscoveryType": "eureka",
+    "serviceDiscoveryType": false,
     "buildTool": "gradle",
     "enableSocialSignIn": false,
     "jwtSecretKey": "4008926680f8071e8c7d6a2fc8406b9313ddcb4e",

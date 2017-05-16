@@ -4,17 +4,9 @@ services:
         image: microapp
         environment:
             - SPRING_PROFILES_ACTIVE=prod,swagger
-            - EUREKA_CLIENT_SERVICE-URL_DEFAULTZONE=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/eureka
-            - SPRING_CLOUD_CONFIG_URI=http://admin:$${jhipster.registry.password}@jhipster-registry:8761/config
-            - SPRING_DATASOURCE_URL=jdbc:postgresql://microapp-postgresql:5432/microApp
-            - JHIPSTER_SLEEP=30 # gives time for the JHipster Registry to boot before the application
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://microapp-postgresql:5432/testdb
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
     microapp-postgresql:
         extends:
             file: postgresql.yml
             service: microapp-postgresql
-    jhipster-registry:
-        extends:
-            file: jhipster-registry.yml
-            service: jhipster-registry
-        environment:
-            - SPRING_CLOUD_CONFIG_SERVER_NATIVE_SEARCH_LOCATIONS=file:./central-config/docker-config/
